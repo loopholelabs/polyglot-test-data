@@ -124,7 +124,7 @@ func main() {
 		},
 		{
 			Name:         "U64",
-			Kind:         polyglot.Uint32Kind[0],
+			Kind:         polyglot.Uint64Kind[0],
 			DecodedValue: uint64(18446744073709551610),
 
 			generate: func(b *polyglot.Buffer) error {
