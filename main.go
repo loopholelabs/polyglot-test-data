@@ -229,6 +229,20 @@ func main() {
 			},
 		},
 		{
+			Name:         "nil or empty Map",
+			Kind:         polyglot.MapKind[0],
+			DecodedValue: map[string]int{},
+
+			generate: func(b *polyglot.Buffer) error {
+				encoder := polyglot.Encoder(b)
+
+				encoder.
+					Map(0, polyglot.StringKind, polyglot.Uint32Kind)
+
+				return nil
+			},
+		},
+		{
 			Name:         "Bytes",
 			Kind:         polyglot.BytesKind[0],
 			DecodedValue: []byte("Test String"),
